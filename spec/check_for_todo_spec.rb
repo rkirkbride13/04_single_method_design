@@ -17,4 +17,12 @@ RSpec.describe "check_for_todo method" do
     expect(check_for_todo("some string with #TODO included")).to eq true
   end
 
+  it "should give a specified error message if nil is passed to method" do
+    expect{check_for_todo(nil)}.to raise_error "Invalid entry to checker"
+  end
+
+  it "should give a specified error message if an integer is passed to method" do
+    expect{check_for_todo(2)}.to raise_error "Invalid entry to checker"
+  end
+
 end
