@@ -1,8 +1,7 @@
 def check_for_todo(text)
-  fail "Invalid entry to checker" if text == nil || text.is_a?(Integer)
-  if text.include?("#TODO")
-    return true
+  if text.is_a?(String)
+    text.include?("#TODO")
   else
-    false
+    fail "Invalid entry to checker"
   end
 end
